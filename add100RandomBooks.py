@@ -56,11 +56,13 @@ def deleteBook(id):
 def delete5first5last():
     books = getBooks()
     # print(books)
-    for i in range(0, 4):
+    for i in range(0, 5):
         deleteBook(books[i]['id'])
     end = len(books) - 1
-    for i in (end, end-5):
+    i = end
+    while i > end - 5:
         deleteBook(books[i]['id'])
+        i -= 1
 
 # Using the faker module, generate random "fake" books
 fake = Faker()
